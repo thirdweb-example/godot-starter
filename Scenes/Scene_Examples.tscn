@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpi4b61tche8e"]
+
+[ext_resource type="Script" path="res://Scripts/ThirdwebManager.cs" id="1_j7jtm"]
+[ext_resource type="Script" path="res://Scripts/ReadContract.cs" id="2_h0yb5"]
+[ext_resource type="Script" path="res://Scripts/SendOTP.cs" id="3_nokx7"]
+[ext_resource type="Script" path="res://Scripts/SubmitOTP.cs" id="4_4s3nu"]
+[ext_resource type="Script" path="res://Scripts/Sign.cs" id="5_1vpxo"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j7jtm")
+
+[node name="Button_Read" type="Button" parent="."]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 200.0
+offset_right = 620.0
+offset_bottom = 254.0
+text = "Click Me!"
+script = ExtResource("2_h0yb5")
+
+[node name="InputEmail" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 344.0
+offset_right = 471.0
+offset_bottom = 398.0
+
+[node name="Button_SendOTP" type="Button" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 421.0
+offset_right = 440.0
+offset_bottom = 475.0
+text = "Send OTP"
+script = ExtResource("3_nokx7")
+
+[node name="InputOTP" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 344.0
+offset_right = 805.0
+offset_bottom = 398.0
+
+[node name="Button_SubmitOTP" type="Button" parent="."]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 417.0
+offset_right = 784.0
+offset_bottom = 471.0
+text = "SubmitOTP"
+script = ExtResource("4_4s3nu")
+
+[node name="Button_Sign" type="Button" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 532.0
+offset_right = 626.0
+offset_bottom = 586.0
+text = "Sign"
+script = ExtResource("5_1vpxo")
+
+[connection signal="button_down" from="Button_Read" to="Button_Read" method="_on_button_down"]
+[connection signal="button_down" from="Button_SendOTP" to="Button_SendOTP" method="_on_button_down"]
+[connection signal="button_down" from="Button_SubmitOTP" to="Button_SubmitOTP" method="_on_button_down"]
+[connection signal="button_down" from="Button_Sign" to="Button_Sign" method="_on_button_down"]

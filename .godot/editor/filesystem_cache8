@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1713999294
+icon.svg::CompressedTexture2D::5174545629153810736::1711656324::1711656330::1::::<><>::
+::res://Scenes/::1712947682
+Scene_Examples.tscn::PackedScene::5843953291828294318::1712947682::0::1::::<><>::res://Scripts/ThirdwebManager.cs<>res://Scripts/ReadContract.cs<>res://Scripts/SendOTP.cs<>res://Scripts/SubmitOTP.cs<>res://Scripts/Sign.cs
+::res://Scripts/::1712848749
+ReadContract.cs::CSharpScript::-1::1712847791::0::1::::<>Node<>::
+SendOTP.cs::CSharpScript::-1::1712947104::0::1::::<>Node<>::
+Sign.cs::CSharpScript::-1::1712848787::0::1::::<>Node<>::
+SubmitOTP.cs::CSharpScript::-1::1712848739::0::1::::<>Node<>::
+ThirdwebManager.cs::CSharpScript::-1::1712848666::0::1::::<>Node<>::
