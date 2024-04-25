@@ -492,7 +492,7 @@
           }
         }
       },
-      "Thirdweb/0.0.13": {
+      "Thirdweb/0.1.1": {
         "type": "package",
         "dependencies": {
           "AWSSDK.Lambda": "3.7.113.2",
@@ -1356,10 +1356,10 @@
         "portable.bouncycastle.nuspec"
       ]
     },
-    "Thirdweb/0.0.13": {
-      "sha512": "xnUIjflF4ZAEpDWGDRFN4qi4O1F2kgtCWRW17b34GtFZohhqu9ge7UxTTLMrnT7V+GjI5K0rdMVqPZUerbWJhA==",
+    "Thirdweb/0.1.1": {
+      "sha512": "UZLZGTcvLDldrEgG6s+Z4wKvKJHFE03H4z1auwrWraKRKsM8WGA46jufIeTaM8+PiWY9ynbRNzKlVkW9KHynSA==",
       "type": "package",
-      "path": "thirdweb/0.0.13",
+      "path": "thirdweb/0.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1373,7 +1373,7 @@
         "lib/net8.0/Thirdweb.xml",
         "lib/netstandard2.1/Thirdweb.dll",
         "lib/netstandard2.1/Thirdweb.xml",
-        "thirdweb.0.0.13.nupkg.sha512",
+        "thirdweb.0.1.1.nupkg.sha512",
         "thirdweb.nuspec"
       ]
     }
@@ -1383,7 +1383,7 @@
       "Godot.SourceGenerators >= 4.2.1",
       "GodotSharp >= 4.2.1",
       "GodotSharpEditor >= 4.2.1",
-      "Thirdweb >= 0.0.13"
+      "Thirdweb >= 0.1.1"
     ]
   },
   "packageFolders": {
@@ -1407,6 +1407,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1444,7 +1445,7 @@
           },
           "Thirdweb": {
             "target": "Package",
-            "version": "[0.0.13, )"
+            "version": "[0.1.1, )"
           }
         },
         "imports": [

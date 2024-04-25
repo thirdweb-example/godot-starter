@@ -7,9 +7,17 @@ public partial class SubmitOTP : Node
 {
     private async void _on_button_down()
     {
-        TextEdit otpInput = GetNode<TextEdit>("../InputOTP");
-        var otp = otpInput.Text;
-        await ThirdwebManager.Instance.InAppWallet.SubmitOTP(otp);
-        GD.Print("Logged in!");
+        var otp = UIManager.Instance.OTPInput.Text;
+        try
+        {
+            await ThirdwebManager.Instance.InAppWallet.SubmitOTP(otp);
+        }
+        catch (Exception e)
+        {
+            UIManager.Instance.Log = "Unable to submit OTP: " + e.Message;
+            return;
+        }
+        UIManager.Instance.Log = "Logged in!";
+        UIManager.Instance.LoginPanel.Visible = false;
     }
 }

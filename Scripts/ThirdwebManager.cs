@@ -1,6 +1,4 @@
 using Godot;
-using System;
-using System.Threading.Tasks;
 using Thirdweb;
 
 public partial class ThirdwebManager : Node
@@ -20,10 +18,11 @@ public partial class ThirdwebManager : Node
 
         Instance = this;
 
-        string secretKey =
-            "ooaaD-bFM0OAvw0hBfSz6fucp3Nxlc94MfqYKpyQvEwQBenYIuhLJhEYoCjQbswUlTAJLfjqxSoo0k2S_KjLEw";
-        Client = ThirdwebClient.Create(secretKey: secretKey);
+        Client = ThirdwebClient.Create(
+            clientId: "0ac469480494fd6332700a7eb649cf01",
+            bundleId: "com.thirdweb.godot"
+        );
 
-        GD.Print("Thirdweb initialized");
+        UIManager.Instance.Log = "ThirdwebManager Initialized!";
     }
 }

@@ -11,7 +11,7 @@
           "Godot.SourceGenerators": "4.2.1",
           "GodotSharp": "4.2.1",
           "GodotSharpEditor": "4.2.1",
-          "Thirdweb": "0.0.13"
+          "Thirdweb": "0.1.1"
         },
         "runtime": {
           "thirdweb-godot.dll": {}
@@ -402,7 +402,7 @@
           }
         }
       },
-      "Thirdweb/0.0.13": {
+      "Thirdweb/0.1.1": {
         "dependencies": {
           "AWSSDK.Lambda": "3.7.113.2",
           "Amazon.Extensions.CognitoAuthentication": "2.5.0",
@@ -417,8 +417,8 @@
         },
         "runtime": {
           "lib/net6.0/Thirdweb.dll": {
-            "assemblyVersion": "0.0.13.0",
-            "fileVersion": "0.0.13.0"
+            "assemblyVersion": "0.1.1.0",
+            "fileVersion": "0.1.1.0"
           }
         }
       }
@@ -668,12 +668,12 @@
       "path": "portable.bouncycastle/1.9.0",
       "hashPath": "portable.bouncycastle.1.9.0.nupkg.sha512"
     },
-    "Thirdweb/0.0.13": {
+    "Thirdweb/0.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xnUIjflF4ZAEpDWGDRFN4qi4O1F2kgtCWRW17b34GtFZohhqu9ge7UxTTLMrnT7V+GjI5K0rdMVqPZUerbWJhA==",
-      "path": "thirdweb/0.0.13",
-      "hashPath": "thirdweb.0.0.13.nupkg.sha512"
+      "sha512": "sha512-UZLZGTcvLDldrEgG6s+Z4wKvKJHFE03H4z1auwrWraKRKsM8WGA46jufIeTaM8+PiWY9ynbRNzKlVkW9KHynSA==",
+      "path": "thirdweb/0.1.1",
+      "hashPath": "thirdweb.0.1.1.nupkg.sha512"
     }
   }
 }

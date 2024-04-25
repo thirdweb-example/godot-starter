@@ -7,26 +7,39 @@ public partial class SendOTP : Node
 {
     private async void _on_button_down()
     {
-        TextEdit emailInput = GetNode<TextEdit>("../InputEmail");
-        var email = emailInput.Text;
-        ThirdwebManager.Instance.InAppWallet = await InAppWallet.Create(
-            client: ThirdwebManager.Instance.Client,
-            email: email
-        );
-
-        if (await ThirdwebManager.Instance.InAppWallet.IsConnected())
+        var email = UIManager.Instance.EmailInput.Text;
+        try
         {
-            await ThirdwebManager.Instance.InAppWallet.Disconnect();
+            ThirdwebManager.Instance.InAppWallet = await InAppWallet.Create(
+                client: ThirdwebManager.Instance.Client,
+                email: email
+            );
+        }
+        catch (Exception e)
+        {
+            UIManager.Instance.Log = "Unable to create InAppWallet: " + e.Message;
+            return;
         }
 
         if (!await ThirdwebManager.Instance.InAppWallet.IsConnected())
         {
-            await ThirdwebManager.Instance.InAppWallet.SendOTP();
-            GD.Print("OTP sent");
+            try
+            {
+                await ThirdwebManager.Instance.InAppWallet.SendOTP();
+            }
+            catch (Exception e)
+            {
+                UIManager.Instance.Log = "Unable to send OTP: " + e.Message;
+                return;
+            }
+            UIManager.Instance.Log = "OTP sent to user!";
+            UIManager.Instance.ValidatePanel.Visible = true;
+            UIManager.Instance.OTPPanel.Visible = false;
         }
         else
         {
-            GD.Print("Session resumed!");
+            UIManager.Instance.Log = "Session resumed!";
+            UIManager.Instance.LoginPanel.Visible = false;
         }
     }
 }

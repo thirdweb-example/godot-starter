@@ -18,7 +18,3 @@ config/icon="res://icon.svg"
 [dotnet]
 
 project/assembly_name="thirdweb-godot"
-
-[rendering]
-
-renderer/rendering_method="mobile"
