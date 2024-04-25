@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("thirdweb-godot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82bf3752d26f84eac9d5a7cc0a3ab7c70dd77a64")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e054f5221317f89c86ebd7035358c4675fbc9da0")]
 [assembly: System.Reflection.AssemblyProductAttribute("thirdweb-godot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("thirdweb-godot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

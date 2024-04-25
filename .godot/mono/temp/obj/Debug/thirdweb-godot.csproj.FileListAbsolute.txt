@@ -45,3 +45,4 @@ D:\Projects\thirdweb-godot\.godot\mono\temp\bin\Debug\Nethereum.Signer.EIP712.dl
 D:\Projects\thirdweb-godot\.godot\mono\temp\bin\Debug\Nethereum.Web3.dll
 D:\Projects\thirdweb-godot\.godot\mono\temp\bin\Debug\BouncyCastle.Crypto.dll
 D:\Projects\thirdweb-godot\.godot\mono\temp\obj\Debug\thirdweb.7BEC138E.Up2Date
+D:\Projects\thirdweb-godot\.godot\mono\temp\obj\Debug\thirdweb-godot.sourcelink.json
