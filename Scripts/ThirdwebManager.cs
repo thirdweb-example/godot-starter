@@ -1,3 +1,6 @@
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Godot;
 using Thirdweb;
 
@@ -8,7 +11,7 @@ public partial class ThirdwebManager : Node
 
     public static ThirdwebManager Instance { get; private set; }
 
-    public override void _Ready()
+    public override async void _Ready()
     {
         if (Instance != null)
         {
@@ -23,6 +26,37 @@ public partial class ThirdwebManager : Node
             bundleId: "com.thirdweb.godot"
         );
 
+        if (OS.GetName() == "Android")
+        {
+            OS.RequestPermissions();
+        }
+
         UIManager.Instance.Log = "ThirdwebManager Initialized!";
+
+        await TestNetworkRequestAsync();
+    }
+
+    private async Task TestNetworkRequestAsync()
+    {
+        GD.Print("Testing network request...");
+        var requestMessage = new HttpRequestMessage(HttpMethod.Get, "https://www.example.com");
+        try
+        {
+            var _httpClient = new System.Net.Http.HttpClient();
+            var response = await _httpClient.SendAsync(requestMessage);
+            if (response.IsSuccessStatusCode)
+            {
+                var responseBody = await response.Content.ReadAsStringAsync();
+                GD.Print("Network request successful. Response: ", responseBody);
+            }
+            else
+            {
+                GD.PrintErr("Network request failed. Status code: ", response.StatusCode);
+            }
+        }
+        catch (Exception ex)
+        {
+            GD.PrintErr("Network request exception: ", ex.Message);
+        }
     }
 }

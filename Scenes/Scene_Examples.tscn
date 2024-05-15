@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpi4b61tche8e"]
+[gd_scene load_steps=12 format=3 uid="uid://cpi4b61tche8e"]
 
 [ext_resource type="Script" path="res://Scripts/ThirdwebManager.cs" id="1_j7jtm"]
 [ext_resource type="Script" path="res://Scripts/UIManager.cs" id="1_wwqb4"]
 [ext_resource type="Script" path="res://Scripts/SendOTP.cs" id="3_nokx7"]
 [ext_resource type="Script" path="res://Scripts/SubmitOTP.cs" id="4_4s3nu"]
+[ext_resource type="Script" path="res://Scripts/LoginWithGoogle.cs" id="4_xv8ms"]
 [ext_resource type="Script" path="res://Scripts/ActionGrid.cs" id="5_qju4l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d8n2"]
@@ -94,6 +95,15 @@ offset_right = 326.0
 offset_bottom = 93.0
 text = "Login"
 script = ExtResource("3_nokx7")
+
+[node name="Button_Google" type="Button" parent="Panel_Login/Panel_SendOTP"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 101.0
+offset_right = 325.0
+offset_bottom = 136.0
+text = "Login with Google"
+script = ExtResource("4_xv8ms")
 
 [node name="Panel_ValidateOTP" type="Panel" parent="Panel_Login"]
 visible = false
@@ -201,6 +211,7 @@ autowrap_mode = 3
 text_overrun_behavior = 3
 
 [connection signal="button_down" from="Panel_Login/Panel_SendOTP/Button_SendOTP" to="Panel_Login/Panel_SendOTP/Button_SendOTP" method="_on_button_down"]
+[connection signal="button_down" from="Panel_Login/Panel_SendOTP/Button_Google" to="Panel_Login/Panel_SendOTP/Button_Google" method="_on_button_down"]
 [connection signal="button_down" from="Panel_Login/Panel_ValidateOTP/Button_SendOTP" to="Panel_Login/Panel_ValidateOTP/Button_SendOTP" method="_on_button_down"]
 [connection signal="button_down" from="Grid_Actions/Button_GetAddress" to="Grid_Actions/Button_GetAddress" method="_on_button_down"]
 [connection signal="button_down" from="Grid_Actions/Button_ContractRead" to="Grid_Actions/Button_ContractRead" method="_on_button_down"]

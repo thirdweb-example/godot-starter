@@ -1,6 +1,0 @@
-res://Scenes/Scene_Examples.tscn
-res://Scripts/ActionGrid.cs
-res://Scripts/SendOTP.cs
-res://Scripts/SubmitOTP.cs
-res://Scripts/ThirdwebManager.cs
-res://Scripts/UIManager.cs
