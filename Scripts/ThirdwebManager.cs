@@ -1,3 +1,6 @@
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Godot;
 using Thirdweb;
 
@@ -22,6 +25,11 @@ public partial class ThirdwebManager : Node
             clientId: "0ac469480494fd6332700a7eb649cf01",
             bundleId: "com.thirdweb.godot"
         );
+
+        if (OS.GetName() == "Android")
+        {
+            OS.RequestPermissions();
+        }
 
         UIManager.Instance.Log = "ThirdwebManager Initialized!";
     }

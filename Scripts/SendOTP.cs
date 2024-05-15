@@ -12,7 +12,8 @@ public partial class SendOTP : Node
         {
             ThirdwebManager.Instance.InAppWallet = await InAppWallet.Create(
                 client: ThirdwebManager.Instance.Client,
-                email: email
+                email: email,
+                storageDirectoryPath: OS.GetUserDataDir()
             );
         }
         catch (Exception e)
