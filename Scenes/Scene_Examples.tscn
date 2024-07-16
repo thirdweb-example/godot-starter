@@ -184,6 +184,11 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "Disconnect"
 
+[node name="Button_CreateSmartWallet" type="Button" parent="Grid_Actions"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Create Smart Wallet"
+
 [node name="Panel_Log" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -217,3 +222,4 @@ text_overrun_behavior = 3
 [connection signal="button_down" from="Grid_Actions/Button_ContractRead" to="Grid_Actions/Button_ContractRead" method="_on_button_down"]
 [connection signal="button_down" from="Grid_Actions/Button_PersonalSign" to="Grid_Actions/Button_PersonalSign" method="_on_button_down"]
 [connection signal="button_down" from="Grid_Actions/Button_Disconnect" to="Grid_Actions/Button_Disconnect" method="_on_button_down"]
+[connection signal="button_down" from="Grid_Actions/Button_CreateSmartWallet" to="Grid_Actions/Button_CreateSmartWallet" method="_on_button_down"]

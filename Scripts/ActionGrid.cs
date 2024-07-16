@@ -9,6 +9,7 @@ public partial class ActionGrid : Node
     Button _readContractButton;
     Button _signButton;
     Button _disconnectButton;
+    Button _createSmartWalletButton;
 
     public override void _Ready()
     {
@@ -23,6 +24,9 @@ public partial class ActionGrid : Node
 
         _disconnectButton = GetNode<Button>("Button_Disconnect");
         _disconnectButton.Connect("pressed", new Callable(this, nameof(Disconnect)));
+
+        _createSmartWalletButton = GetNode<Button>("Button_CreateSmartWallet");
+        _createSmartWalletButton.Connect("pressed", new Callable(this, nameof(CreateSmartWallet)));
     }
 
     private async void GetAddress()
@@ -109,5 +113,28 @@ public partial class ActionGrid : Node
     {
         return ThirdwebManager.Instance.InAppWallet != null
             && await ThirdwebManager.Instance.InAppWallet.IsConnected();
+    }
+
+    private async void CreateSmartWallet()
+    {
+        if (!await IsConnected())
+        {
+            UIManager.Instance.Log = "Not connected!";
+            return;
+        }
+
+        try
+        {
+            var smartWallet = await SmartWallet.Create(
+                personalWallet: ThirdwebManager.Instance.InAppWallet,
+                chainId: 421614,
+                gasless: true
+            );
+            UIManager.Instance.Log = $"Smart wallet created: {await smartWallet.GetAddress()}";
+        }
+        catch (Exception e)
+        {
+            UIManager.Instance.Log = $"Error: {e.Message}";
+        }
     }
 }
