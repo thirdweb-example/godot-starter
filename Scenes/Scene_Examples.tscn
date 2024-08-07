@@ -1,20 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpi4b61tche8e"]
+[gd_scene load_steps=13 format=3 uid="uid://cpi4b61tche8e"]
 
 [ext_resource type="Script" path="res://Scripts/ThirdwebManager.cs" id="1_j7jtm"]
 [ext_resource type="Script" path="res://Scripts/UIManager.cs" id="1_wwqb4"]
 [ext_resource type="Script" path="res://Scripts/SendOTP.cs" id="3_nokx7"]
 [ext_resource type="Script" path="res://Scripts/SubmitOTP.cs" id="4_4s3nu"]
 [ext_resource type="Script" path="res://Scripts/LoginWithGoogle.cs" id="4_xv8ms"]
+[ext_resource type="Script" path="res://Scripts/LoginWithApple.cs" id="5_7ou7v"]
 [ext_resource type="Script" path="res://Scripts/ActionGrid.cs" id="5_qju4l"]
+[ext_resource type="Script" path="res://Scripts/LoginWithDiscord.cs" id="6_hhiqh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d8n2"]
 bg_color = Color(0.219608, 0.564706, 0.666667, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0vsu1"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ncl3x"]
-font_size = 20
-font_color = Color(0.0117647, 0.105882, 0.113725, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_77uey"]
 
@@ -54,26 +52,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0vsu1")
 
-[node name="Label_Login" type="Label" parent="Panel_Login"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -94.0
-offset_top = 177.0
-offset_right = 99.0
-offset_bottom = 212.0
-grow_horizontal = 2
-text = "Login with Email"
-label_settings = SubResource("LabelSettings_ncl3x")
-horizontal_alignment = 1
-
 [node name="Panel_SendOTP" type="Panel" parent="Panel_Login"]
 layout_mode = 0
-offset_left = 422.0
-offset_top = 210.0
-offset_right = 764.0
-offset_bottom = 320.0
+offset_left = 427.0
+offset_top = 109.0
+offset_right = 769.0
+offset_bottom = 384.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_77uey")
 
 [node name="Input_Email" type="TextEdit" parent="Panel_Login/Panel_SendOTP"]
@@ -104,6 +88,22 @@ offset_right = 325.0
 offset_bottom = 136.0
 text = "Login with Google"
 script = ExtResource("4_xv8ms")
+
+[node name="Button_Apple" type="Button" parent="Panel_Login/Panel_SendOTP"]
+offset_left = 11.0
+offset_top = 146.0
+offset_right = 325.0
+offset_bottom = 181.0
+text = "Login with Apple"
+script = ExtResource("5_7ou7v")
+
+[node name="Button_Discord" type="Button" parent="Panel_Login/Panel_SendOTP"]
+offset_left = 11.0
+offset_top = 191.0
+offset_right = 325.0
+offset_bottom = 226.0
+text = "Login with Discord"
+script = ExtResource("6_hhiqh")
 
 [node name="Panel_ValidateOTP" type="Panel" parent="Panel_Login"]
 visible = false
@@ -217,6 +217,8 @@ text_overrun_behavior = 3
 
 [connection signal="button_down" from="Panel_Login/Panel_SendOTP/Button_SendOTP" to="Panel_Login/Panel_SendOTP/Button_SendOTP" method="_on_button_down"]
 [connection signal="button_down" from="Panel_Login/Panel_SendOTP/Button_Google" to="Panel_Login/Panel_SendOTP/Button_Google" method="_on_button_down"]
+[connection signal="button_down" from="Panel_Login/Panel_SendOTP/Button_Apple" to="Panel_Login/Panel_SendOTP/Button_Apple" method="_on_button_down"]
+[connection signal="button_down" from="Panel_Login/Panel_SendOTP/Button_Discord" to="Panel_Login/Panel_SendOTP/Button_Discord" method="_on_button_down"]
 [connection signal="button_down" from="Panel_Login/Panel_ValidateOTP/Button_SendOTP" to="Panel_Login/Panel_ValidateOTP/Button_SendOTP" method="_on_button_down"]
 [connection signal="button_down" from="Grid_Actions/Button_GetAddress" to="Grid_Actions/Button_GetAddress" method="_on_button_down"]
 [connection signal="button_down" from="Grid_Actions/Button_ContractRead" to="Grid_Actions/Button_ContractRead" method="_on_button_down"]

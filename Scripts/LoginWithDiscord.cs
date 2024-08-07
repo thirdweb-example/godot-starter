@@ -3,7 +3,7 @@ using System;
 using System.Threading.Tasks;
 using Thirdweb;
 
-public partial class LoginWithGoogle : Node
+public partial class LoginWithDiscord : Node
 {
     private async void _on_button_down()
     {
@@ -11,7 +11,7 @@ public partial class LoginWithGoogle : Node
         {
             ThirdwebManager.Instance.InAppWallet = await InAppWallet.Create(
                 client: ThirdwebManager.Instance.Client,
-                authProvider: AuthProvider.Google,
+                authProvider: AuthProvider.Discord,
                 storageDirectoryPath: OS.GetUserDataDir()
             );
         }
