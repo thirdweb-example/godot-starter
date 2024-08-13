@@ -10,7 +10,7 @@ public partial class SubmitOTP : Node
         var otp = UIManager.Instance.OTPInput.Text;
         try
         {
-            await ThirdwebManager.Instance.InAppWallet.SubmitOTP(otp);
+            await ThirdwebManager.Instance.InAppWallet.LoginWithOtp(otp);
         }
         catch (Exception e)
         {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpi4b61tche8e"]
+[gd_scene load_steps=14 format=3 uid="uid://cpi4b61tche8e"]
 
 [ext_resource type="Script" path="res://Scripts/ThirdwebManager.cs" id="1_j7jtm"]
 [ext_resource type="Script" path="res://Scripts/UIManager.cs" id="1_wwqb4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/LoginWithApple.cs" id="5_7ou7v"]
 [ext_resource type="Script" path="res://Scripts/ActionGrid.cs" id="5_qju4l"]
 [ext_resource type="Script" path="res://Scripts/LoginWithDiscord.cs" id="6_hhiqh"]
+[ext_resource type="Script" path="res://Scripts/LoginWithTelegram.cs" id="7_bg4r1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d8n2"]
 bg_color = Color(0.219608, 0.564706, 0.666667, 1)
@@ -90,6 +91,7 @@ text = "Login with Google"
 script = ExtResource("4_xv8ms")
 
 [node name="Button_Apple" type="Button" parent="Panel_Login/Panel_SendOTP"]
+layout_mode = 0
 offset_left = 11.0
 offset_top = 146.0
 offset_right = 325.0
@@ -98,12 +100,22 @@ text = "Login with Apple"
 script = ExtResource("5_7ou7v")
 
 [node name="Button_Discord" type="Button" parent="Panel_Login/Panel_SendOTP"]
+layout_mode = 0
 offset_left = 11.0
 offset_top = 191.0
 offset_right = 325.0
 offset_bottom = 226.0
 text = "Login with Discord"
 script = ExtResource("6_hhiqh")
+
+[node name="Button_Telegram" type="Button" parent="Panel_Login/Panel_SendOTP"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 237.0
+offset_right = 324.0
+offset_bottom = 272.0
+text = "Login with Telegram"
+script = ExtResource("7_bg4r1")
 
 [node name="Panel_ValidateOTP" type="Panel" parent="Panel_Login"]
 visible = false
@@ -219,6 +231,7 @@ text_overrun_behavior = 3
 [connection signal="button_down" from="Panel_Login/Panel_SendOTP/Button_Google" to="Panel_Login/Panel_SendOTP/Button_Google" method="_on_button_down"]
 [connection signal="button_down" from="Panel_Login/Panel_SendOTP/Button_Apple" to="Panel_Login/Panel_SendOTP/Button_Apple" method="_on_button_down"]
 [connection signal="button_down" from="Panel_Login/Panel_SendOTP/Button_Discord" to="Panel_Login/Panel_SendOTP/Button_Discord" method="_on_button_down"]
+[connection signal="button_down" from="Panel_Login/Panel_SendOTP/Button_Telegram" to="Panel_Login/Panel_SendOTP/Button_Telegram" method="_on_button_down"]
 [connection signal="button_down" from="Panel_Login/Panel_ValidateOTP/Button_SendOTP" to="Panel_Login/Panel_ValidateOTP/Button_SendOTP" method="_on_button_down"]
 [connection signal="button_down" from="Grid_Actions/Button_GetAddress" to="Grid_Actions/Button_GetAddress" method="_on_button_down"]
 [connection signal="button_down" from="Grid_Actions/Button_ContractRead" to="Grid_Actions/Button_ContractRead" method="_on_button_down"]
